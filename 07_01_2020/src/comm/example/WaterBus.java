@@ -1,7 +1,6 @@
 package comm.example;
 
-public class Truck extends Transport {
-	
+public class WaterBus extends Transport {
 	@Override
 	double calculateDistance(double initialdistance, double finaldistance) {
 		// TODO Auto-generated method stub]
@@ -19,8 +18,6 @@ public class Truck extends Transport {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Truck's "+super.toString();
+		return "Water Bus's "+super.toString();
 	}
-	
- 
 }

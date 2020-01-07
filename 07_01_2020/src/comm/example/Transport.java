@@ -1,27 +1,31 @@
 package comm.example;
 
-public abstract class Transport 
-{
-	private double fuel;
-	private int distence;
-	private int start_point;
-	private int end_point;
-	public double getFuel() 
-	{
-		return fuel;
+public abstract class Transport {
+	private double distance;
+	private double efficiency;
+	
+	public double getDistance() {
+		return distance;
 	}
-	public int getDistence() 
-	{
-		return distence;
+	public void setDistance(double distance) {
+		this.distance = distance;
 	}
-	public void setDistence(int distence) 
-	{
-		this.distence = distence;
+	public double getEfficiency() {
+		return efficiency;
 	}
-	public void setFuel(double fuel) 
-	{
-		this.fuel = fuel;
+	public void setEfficiency(double efficiency) {
+		this.efficiency = efficiency;
 	}
-	public abstract void calculateDistence();
-	public abstract void calculateFuel();
+	
+	abstract double calculateDistance(double initialdistance, double finaldistance);
+	abstract double calculateEfficiency(double initialfuel,double finalfuel);
+	
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Fuel Efficiency: "+getEfficiency();
+	}
+
+
 }
