@@ -1,17 +1,27 @@
-package comm.example;
 
+
+
+
+import java.time.LocalDate;
+import java.util.Spliterator;
 import java.util.UUID;
 
 public class MyApp {
 
 	public static void main(String[] args) {
-		Coach myCoach1=new Coach(UUID.randomUUID().toString()
-				,"John","Doe","Tennis");
-		Coach myCoach2=new Coach(UUID.randomUUID().toString()
-				,"John","Doe","Cricket");
-		System.out.println("Coach1 Details: \n"+myCoach1+"\nCoach2 Details: \n"+myCoach2);
-		System.out.println(myCoach1==myCoach2);
-		System.out.println(myCoach1.equals(myCoach2));
+		/*(Task ts1 = new Task( "Task Name Test", UUID.randomUUID().toString(),	LocalDate.now(),true);
+		Task ts2 = new Task("Task Name Test", UUID.randomUUID().toString(), LocalDate.now(),true);
+		System.out.println(ts1);
+		System.out.println(ts2);
+		System.out.println(ts1.equals(ts2));*/
+		BoxingUnboxingDemo demo=new BoxingUnboxingDemo(new Integer(100), 200);
+		demo.display();
+		
+		
+		
+		
+		
+		
 
 	}
 

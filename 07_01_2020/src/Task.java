@@ -1,88 +1,80 @@
-package comm.example;
-public class Task
-{
-	private String taskId;
-	private String taskName;
-	private String taskDate;
-	private Boolean isCompleated;
-	public Task()
-	{
-		super();
-	}
-	public Task(String taskId, String taskName ,String taskDate, Boolean isCompleated)
-	{
-		super();
-		this.taskId = taskId;
-		this.taskName = taskName;
-		this.taskDate = taskDate;
-		this.isCompleated = isCompleated;	
-	}
+
+
+import java.time.LocalDate;
+
+public class Task {
+	 private String taskName;
+	 private String taskId;
+	 private LocalDate taskDate;
+	 private boolean isCompleted;
+	
+	 public Task(String taskName, String taskId, LocalDate taskDate, boolean isCompleted )
+	 {
+		 this.taskName = taskName;
+		 this.taskId = taskId;
+		 this.taskDate = taskDate;
+		 this.isCompleted = isCompleted;
+	 }
+
 	@Override
-	public String toString()
-	{
-		return "taskId" +taskId+ "taskName" + taskName + "taskDate" +taskDate+ "isCompleated" 
-	+isCompleated;
+	public String toString() {
+		return "Task [taskName=" + taskName + ", taskId=" + taskId + ", taskDate=" + taskDate + ", isCompleted="
+				+ isCompleted + "]";
 	}
-	@Override
-	public boolean equals(Object object)
-	{
-		Task theTask = null;
+
+
+	public boolean equals(Object obj) {
+
+		Task myTask = null;
 		boolean isEqual=false;
-		if (object instanceof Task) 
-		{
-			theTask = (Task) object;
+		if (obj instanceof Task) {
+			myTask = (Task) obj;
 		}
-		if((this.getTaskId()==theTask.getTaskId()) &&
-				(this.getTaskName()==theTask.getTaskName()) &&(this.getTaskDate()==theTask.getTaskDate()))
+		if((this.getTaskName()==myTask.getTaskName()) &&
+				(this.getTaskDate().equals(((Task) obj).getTaskDate())&&(this.isCompleted()==myTask.isCompleted())))
 		{
 			isEqual=true;
 		}
 		return isEqual;
+
 	}
-	/*@Override
-	public int hashCode() {
+
+	private boolean getCoachesFor() {
 		// TODO Auto-generated method stub
-		return super.hashCode();
-	}*/
-
-	public String getTaskId() 
-	{
-		return taskId;
+		return false;
 	}
 
-	public void setTaskIdId(String taskId) 
-	{
-		this.taskId = taskId;
-	}
-
-	public String getTaskName() 
-	{
+	public String getTaskName() {
 		return taskName;
 	}
 
-	public void setTaskName(String taskName) 
-	{
+	public void setTaskName(String taskName) {
 		this.taskName = taskName;
 	}
 
-	public String getTaskDate() 
-	{
+	public String getTaskId() {
+		return taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
+
+	public LocalDate getTaskDate() {
 		return taskDate;
 	}
 
-	public void setTaskDate(String taskDate) 
-	{
+	public void setTaskDate(LocalDate taskDate) {
 		this.taskDate = taskDate;
 	}
 
-	public Boolean getIsCompleated() 
-	{
-		return isCompleated;
+	public boolean isCompleted() {
+		return isCompleted;
 	}
 
-	public void setIsCompleated(Boolean isCompleated) 
-	{
-		this.isCompleated = isCompleated;
+	public void setCompleted(boolean isCompleted) {
+		this.isCompleted = isCompleted;
 	}
+	 
+	 
 }
- 
