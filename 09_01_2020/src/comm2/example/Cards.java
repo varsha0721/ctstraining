@@ -1,73 +1,78 @@
 package comm2.example;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Cards 
 {
+	static int n = 4;
 	private LinkedList<String> ls= new LinkedList<String>();
 
-		public void getCardsList()
-		{
-			ls.add("ace , heart");
-			ls.add("king , heart");
-			ls.add("queen , heart");
-			ls.add("jake , heart");
-			ls.add("10 , heart");
-			ls.add("9 , heart");
-			ls.add("8 , heart");
-			ls.add("7 , heart");
-			ls.add("6 , heart");
-			ls.add("5 , heart");
-			ls.add("4 , heart");
-			ls.add("3 , heart");
-			ls.add("1 , heart");
+	static String card [] = {
+		//public void getCardsList()
+		//{
+			("ace , heart"),
+			("king , heart"),
+			("queen , heart"),
+			("jake , heart"),
+			("10 , heart"),
+			("9 , heart"),
+			("8 , heart"),
+			("7 , heart"),
+			("6 , heart"),
+			("5 , heart"),
+			("4 , heart"),
+			("3 , heart"),
+			("1 , heart"),
 			
-			ls.add("ace , diamond");
-			ls.add("king , diamond");
-			ls.add("queen , diamond");
-			ls.add("jake , diamond");
-			ls.add("10 , diamond");
-			ls.add("9 , diamond");
-			ls.add("8 , diamond");
-			ls.add("7 , diamond");
-			ls.add("6 , diamond");
-			ls.add("5 , diamond");
-			ls.add("4 , diamond");
-			ls.add("3 , diamond");
-			ls.add("1 , diamond");
+			("ace , diamond"),
+			("king , diamond"),
+			("queen , diamond"),
+			("jake , diamond"),
+			("10 , diamond"),
+			("9 , diamond"),
+			("8 , diamond"),
+			("7 , diamond"),
+			("6 , diamond"),
+			("5 , diamond"),
+			("4 , diamond"),
+			("3 , diamond"),
+			("1 , diamond"),
 			
-			ls.add("ace , club");
-			ls.add("king , club");
-			ls.add("queen , club");
-			ls.add("jake , club");
-			ls.add("10 , club");
-			ls.add("9 , club");
-			ls.add("8 , club");
-			ls.add("7 , club");
-			ls.add("6 , club");
-			ls.add("5 , club");
-			ls.add("4 , club");
-			ls.add("3 , club");
-			ls.add("1 , club");
+			("ace , club"),
+			("king , club"),
+			("queen , club"),
+			("jake , club"),
+			("10 , club"),
+			("9 , club"),
+			("8 , club"),
+			("7 , club"),
+			("6 , club"),
+			("5 , club"),
+			("4 , club"),
+			("3 , club"),
+			("1 , club"),
 			
-			ls.add("ace , spade");
-			ls.add("king , spade");
-			ls.add("queen , spade");
-			ls.add("jake , spade");
-			ls.add("10 , spade");
-			ls.add("9 , spade");
-			ls.add("8 , spade");
-			ls.add("7 , spade");
-			ls.add("6 , spade");
-			ls.add("5 , spade");
-			ls.add("4 , spade");
-			ls.add("3 , spade");
-			ls.add("1 , spade");
+			("ace , spade"),
+			("king , spade"),
+			("queen , spade"),
+			("jake , spade"),
+			("10 , spade"),
+			("9 , spade"),
+			("8 , spade"),
+			("7 , spade"),
+			("6 , spade"),
+			("5 , spade"),
+			("4 , spade"),
+			("3 , spade"),
+			("1 , spade") 
+			};
 			
-			System.out.println("before shuffling");
-			System.out.println(ls);
+			/*System.out.println("before shuffling");
+			System.out.println(card);
 			Collections.shuffle(ls);
 			System.out.println("after shuffling");
 			System.out.println(ls);
@@ -77,12 +82,29 @@ public class Cards
 			List<String> player2 = player2.subList(14, 26);
 			List<String> player3 = player3.subList(27, 40);
 			List<String> player4 = player4.subList(41, 52);
-		}
+		}*/
 
 	public static void main(String[] args)
 	{
-		Cards card =new Cards();
-		card.getCardsList();
+		List<String> l = new ArrayList<String>();
+		//Cards card =new Cards();
+		for(String array : card)
+		{
+			System.out.println(array);
+		}
+		l = Arrays.asList(card);
+		System.out.println(l);
+		System.out.println("before shuffling");
+		System.out.println(l);
+		Collections.shuffle(l);
+		System.out.println("after shuffling");
+		System.out.println(l);
+		int k = 52/n;
+		for (String ls:l)
+		{
+			List<String> player1 = player1.subList(0, k); 	
+		}
+		
 	}
 	
 }
