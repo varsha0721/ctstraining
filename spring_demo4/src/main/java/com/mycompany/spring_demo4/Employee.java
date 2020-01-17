@@ -8,9 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Setter
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Setter
 
 @Component
 public class Employee {
@@ -26,6 +26,12 @@ public class Employee {
 	public String toString() {
 		return "Employee [employeeid=" + employeeid + ", firstName=" + firstName + ", lastName=" + lastName
 				+ ", address=" + address + "]";
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 }
