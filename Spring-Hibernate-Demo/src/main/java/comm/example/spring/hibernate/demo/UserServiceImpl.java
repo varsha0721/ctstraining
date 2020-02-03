@@ -18,8 +18,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	@Transactional
-	public UserDetail createUser(UserDetail user) {
-		// TODO Auto-generated method stub
+	public UserDetail createUser(UserDetail user) 
+	{
 		return dao.createUser(user);
 	}
 

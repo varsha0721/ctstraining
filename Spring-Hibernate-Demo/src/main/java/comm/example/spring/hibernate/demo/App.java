@@ -16,13 +16,13 @@ public class App
     {
     	ClassPathXmlApplicationContext context=null;
     	BufferedReader br=null;
-    	UserService service=null;	
+    	UserServiceImpl service=null;	
     	
     	try 
     	{
     		br=new BufferedReader(new InputStreamReader(System.in));
 			context=new ClassPathXmlApplicationContext("applicationContext.xml");
-			service=context.getBean("service",UserService.class);
+			service=context.getBean("service",UserServiceImpl.class);
 			UserDetail user = service.createUser(new UserDetail(UUID.randomUUID().toString(),"fdsjgdsjkgsfkj", "xasd@gmail.com" ));
 			System.out.println(user);
     	} 

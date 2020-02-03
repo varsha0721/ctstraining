@@ -4,14 +4,15 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	   
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		http://www.springframework.org/schema/context
+		 http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 <context:component-scan base-package="comm.example.spring.hibernate.demo"/>
 
     <!-- Step 1: Define Database DataSource / connection pool -->
 	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
        
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/hr?useSSL=false&amp;serverTimezone=UTC" />
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/hr?" />
         <property name="user" value="root" />
         <property name="password" value="welcome" /> 
 
