@@ -1,0 +1,1 @@
+insert into student(firstname,lastname,email) values('varsha','rajawat','email');
