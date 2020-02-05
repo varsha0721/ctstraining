@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -55,6 +58,7 @@ public class BookController {
 	{
 		return bookService.getAllBooks();
 	}
+	
 	@GetMapping("/books/{bookId}")
 	public Optional<Book> getBookById(@PathVariable Integer bookId) throws Exception
 	{
@@ -66,15 +70,58 @@ public class BookController {
 		
 		return book; 
 	}
-//	@DeleteMapping("/books/{bookId}")  
-//	public  void deleteBookById(@PathVariable Integer bookId)  
-//	{  
-//		Optional<Book> book=bookService.getBookById(bookId);
-//		if(!book.isPresent())
-//		{
-//			throw new BookNotFoundException("book not found with id: "+bookId);
-//		}
-//		
-//	}  
+	
+	@GetMapping("/books/name/{bookName}")
+	public List<Book> findByBookName(@PathVariable String bookName)
+	{
+		return bookService.findByBookName(bookName);
+	}
+	
+	@PostMapping("/books")
+	public Book createBook(@RequestBody Book book)
+	
+	{	//book.setBookId(0);
+		return bookService.createBook(book);
+	}
+	
+	@PutMapping("/books")
+	public Book updateBook(@RequestBody Book book)
+	
+	{	//book.setBookId(0);
+		return bookService.createBook(book);
+	}
+	
+	@DeleteMapping("/books/{bookId}")  
+	public  String deleteBookById(@PathVariable Integer bookId)  
+	{  
+		Optional<Book> book=bookService.getBookById(bookId);
+		if(!book.isPresent())
+		{
+		throw new BookNotFoundException("book not found with id: "+bookId);
+		}
+		else 
+		{
+		bookService.deleteBookById(bookId);
+		return "book deleated successfully with book id:" +bookId;
+		}
+	} 
+	
+	@DeleteMapping("/books")
+	public void deleteAll()
+	{
+		bookService.deleteAll();
+	}
+	
+	@DeleteMapping("/books/name/{bookName}")  
+	public  void deleteBookByBookName(@PathVariable String bookName)  
+	{  
+		bookService.deleteByBookName(bookName);
+	}
+	 
+	@GetMapping("/books/findByAuthorAndBookName/{author}/{bookName}")
+	public List<Book> findByBookName(@PathVariable String author,@PathVariable String bookName)
+	{
+		return bookService.findByAuthorAndBookName(author, bookName);
+	}
 	
 }

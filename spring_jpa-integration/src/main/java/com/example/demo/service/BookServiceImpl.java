@@ -41,4 +41,11 @@ public class BookServiceImpl implements BookService {
 		return book;
 	}
 
+//	@Override
+//	@Transactional
+//	public void deleteBookById(Integer bookId) {
+//		// TODO Auto-generated method stub
+//		return bookDAO.deleteBookById(bookId);
+//	}
+
 }
